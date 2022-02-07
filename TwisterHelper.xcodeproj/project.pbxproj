@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		F628647A27B07E2100CFBA38 /* TwisterHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628647927B07E2100CFBA38 /* TwisterHelperApp.swift */; };
-		F628647C27B07E2100CFBA38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628647B27B07E2100CFBA38 /* ContentView.swift */; };
+		F628647C27B07E2100CFBA38 /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628647B27B07E2100CFBA38 /* RollView.swift */; };
 		F628647E27B07E2300CFBA38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F628647D27B07E2300CFBA38 /* Assets.xcassets */; };
 		F628648127B07E2300CFBA38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F628648027B07E2300CFBA38 /* Preview Assets.xcassets */; };
+		F628648827B1452800CFBA38 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628648727B1452800CFBA38 /* StartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F628647627B07E2100CFBA38 /* TwisterHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwisterHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F628647927B07E2100CFBA38 /* TwisterHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwisterHelperApp.swift; sourceTree = "<group>"; };
-		F628647B27B07E2100CFBA38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F628647B27B07E2100CFBA38 /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		F628647D27B07E2300CFBA38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F628648027B07E2300CFBA38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F628648727B1452800CFBA38 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				F628647927B07E2100CFBA38 /* TwisterHelperApp.swift */,
-				F628647B27B07E2100CFBA38 /* ContentView.swift */,
+				F628648727B1452800CFBA38 /* StartView.swift */,
+				F628647B27B07E2100CFBA38 /* RollView.swift */,
 				F628647D27B07E2300CFBA38 /* Assets.xcassets */,
 				F628647F27B07E2300CFBA38 /* Preview Content */,
 			);
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F628647C27B07E2100CFBA38 /* ContentView.swift in Sources */,
+				F628648827B1452800CFBA38 /* StartView.swift in Sources */,
+				F628647C27B07E2100CFBA38 /* RollView.swift in Sources */,
 				F628647A27B07E2100CFBA38 /* TwisterHelperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

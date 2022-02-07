@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RollView.swift
 //  TwisterHelper
 //
 //  Created by Nazariy Vysokinskyi on 07.02.2022.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    let players = ["Олена", "Олександр", "Назарій"]
+struct RollView: View {
+    @Binding var players: Array<String>
     @State private var currentPlayerIndex = 0
     
     let limbs = ["→ ✋🏻", "✋🏻 ←", "→ 🦶🏻", "🦶🏻 ←"]
@@ -33,7 +33,7 @@ struct ContentView: View {
                 Spacer()
                 
                 Button("Далі →") {
-                    goToNextPlayer()
+                    endTurn()
                 }
                 .foregroundColor(Color.primary)
                 .font(.system(size: 60))
@@ -42,6 +42,13 @@ struct ContentView: View {
             Spacer()
         }
         .background(colors[currentColorIndex])
+        .navigationBarHidden(true)
+    }
+    
+    func endTurn() {
+        goToNextPlayer()
+        randomizeLimb()
+        randomizeColor()
     }
     
     func goToNextPlayer() {
@@ -50,9 +57,6 @@ struct ContentView: View {
         if currentPlayerIndex >= players.count {
             currentPlayerIndex = 0
         }
-        
-        randomizeLimb()
-        randomizeColor()
     }
     
     func randomizeLimb() {
@@ -64,8 +68,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct RollView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RollView(players: .constant(["Назар", "Сашко", "Олена"]))
     }
 }
