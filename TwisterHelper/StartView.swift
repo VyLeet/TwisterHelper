@@ -11,14 +11,24 @@ struct StartView: View {
     
     @State private var players: [String] = []
     @State private var newPlayerName = ""
+    private let colors: Array<Color> = [.mint, .red]
+    @State private var currentColor = Color.mint
+    
     
     var body: some View {
         NavigationView {
             VStack {
-                ForEach(players, id: \.self) { player in
-                    Text(player)
-                        .font(.title)
+                Group {
+                    if !players.isEmpty {
+                        ForEach(players, id: \.self) { player in
+                            Text(player)
+                        }
+                    } else {
+                        Text("Немає гравців")
+                    }
                 }
+                .font(.system(size: 30, weight: .black, design: .default))
+                .padding()
                 
                 Divider()
                 
@@ -28,12 +38,24 @@ struct StartView: View {
                         .font(.title)
                     
                     Button {
-                        players.append(newPlayerName)
-                        newPlayerName = ""
+                        let oldColor = currentColor
+                        
+                        if !players.contains(newPlayerName) {
+                            players.append(newPlayerName)
+                            newPlayerName = ""
+                            currentColor = .green
+                        } else {
+                            currentColor = .red
+                        }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                            currentColor = oldColor
+                        }
                     } label: {
                         Text("Додати")
                             .padding()
                             .foregroundColor(.primary)
+                            .font(.title2)
                     }
                 }
                 
@@ -44,14 +66,17 @@ struct StartView: View {
                 } label: {
                     Text("Грати →")
                         .font(.largeTitle)
-                        .foregroundColor(.primary)
+                        .foregroundColor(isPlayButtonDisabled ? .secondary : .primary)
                         .bold()
                 }
+                .disabled(isPlayButtonDisabled)
             }
+            .background(currentColor)
             .navigationTitle("Гравці")
-            .background(.mint)
         }
     }
+    
+    var isPlayButtonDisabled: Bool { players.isEmpty }
 }
 
 struct StartView_Previews: PreviewProvider {

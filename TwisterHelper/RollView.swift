@@ -22,6 +22,21 @@ struct RollView: View {
             Spacer()
             
             VStack {
+                HStack {
+                    Spacer()
+                    
+                    NavigationLink {
+                        StartView()
+                            .navigationBarHidden(true)
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 30, weight: .black, design: .default))
+                            .foregroundColor(.black)
+                            .padding()
+                    }
+
+                }
+                
                 Spacer()
                 
                 Text(players[currentPlayerIndex])
